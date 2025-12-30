@@ -15,6 +15,5 @@ jobs:
           rsync -av ./ $WORKSPACE/src/mypkg/
           cd $WORKSPACE
           colcon build --symlink-install
-          source install/setup.bash
           bash $WORKSPACE/src/mypkg/test/test.bash $WORKSPACE
 

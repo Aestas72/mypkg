@@ -9,7 +9,7 @@ cd $dir/ros2_ws || exit 1
 
 colcon build --symlink-install || exit 1
 
-source install/setup.bash
+. install/setup.bash
 
 timeout 10 ros2 launch mypkg talk_listen.launch.py > /tmp/mypkg.log 2>&1
 
