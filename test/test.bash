@@ -1,19 +1,14 @@
 #!/bin/bash
-set -e
+# SPDX-FileCopyrightText: 2025 Natsuhi Shimada
+# SPDX-License-Identifier: BSD-3-Clause
 
-dir=/root
+dir=~
 [ "$1" != "" ] && dir="$1"
-
-# ROS 2 を必ず source
-source /opt/ros/humble/setup.bash
 
 cd $dir/ros2_ws
 colcon build
-
-# ワークスペースを source
-source install/setup.bash
-
+source $dir/.bashrc
 timeout 10 ros2 launch mypkg talk_listen.launch.py > /tmp/mypkg.log
 
-grep 'Listen: 10' /tmp/mypkg.log
+cat /tmp/mypkg.log | grep 'Listen: 10'
 
