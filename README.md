@@ -31,7 +31,7 @@ $ source install/setup.bash
 $ ros2 launch mypkg talk_listen.launch.py
 ```
 
-##実行例
+## 実行例
 ```bash
 ========================================
 Command: df -h
@@ -45,7 +45,7 @@ STDERR:
 ========================================
 ```
 
-##動作環境
+## 動作環境
 - ROS 2 Humble
 - Python 3.10
 - Ubuntu 22.04（WSL2 含む）
