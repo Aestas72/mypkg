@@ -6,11 +6,8 @@ jobs:
     container: ryuichiueda/ubuntu22.04-ros2:latest
     steps:
       - uses: actions/checkout@v3
-      - name: Build and test
-        shell: bash
+      - name: build and test
         run: |
-          WORKSPACE=$GITHUB_WORKSPACE/ros2_ws
-          mkdir -p $WORKSPACE/src
-          rsync -av ./ $WORKSPACE/src/mypkg/
-          bash $WORKSPACE/src/mypkg/test/test.bash $WORKSPACE
-
+          rsync -av ./ /root/ros2_ws/src/mypkg/
+          cd /root/ros2_ws
+          bash -xv ./src/mypkg/test/test.bash /root

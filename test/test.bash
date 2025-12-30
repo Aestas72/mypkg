@@ -2,18 +2,13 @@
 # SPDX-FileCopyrightText: 2025 Natsuhi Shimada
 # SPDX-License-Identifier: BSD-3-Clause
 
-set -e
+dir=~
+[ "$1" != "" ] && dir="$1"
 
-WORKSPACE=$1
-[ -z "$WORKSPACE" ] && WORKSPACE=$GITHUB_WORKSPACE
+cd $dir/ros2_ws
+colcon build
+source $dir/.bashrc
+timeout 10 ros2 launch mypkg talk_listen.launch.py > /tmp/mypkg.log
 
-cd "$WORKSPACE/src/mypkg"
-
-colcon build --symlink-install
-
-source install/setup.bash
-
-timeout 10 ros2 launch mypkg talk_listen.launch.py > /tmp/mypkg.log 2>&1
-
-grep 'Listen: 10' /tmp/mypkg.log
+cat /tmp/mypkg.log | grep 'Listen: 10'
 
