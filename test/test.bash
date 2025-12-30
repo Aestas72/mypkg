@@ -4,10 +4,10 @@
 
 set -e
 
-dir=$1
-[ -z "$dir" ] && dir=$GITHUB_WORKSPACE
+WORKSPACE=$1
+[ -z "$WORKSPACE" ] && WORKSPACE=$GITHUB_WORKSPACE
 
-cd "$dir/src/mypkg"
+cd "$WORKSPACE/src/mypkg"
 
 colcon build --symlink-install
 
