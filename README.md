@@ -1,11 +1,11 @@
-# mypkg — コマンド実行ログROS 2パッケージ
+# mypkg — コマンド実行ログROS2パッケージ
 ![test](https://github.com/Aestas72/mypkg/actions/workflows/test.yml/badge.svg)
 
-`mypkg` は、ROS 2 上でシェルコマンドを定期的に実行し、その実行結果を
+`mypkg` は、ROS2上でシェルコマンドを定期的に実行し、その実行結果を
 トピック通信で配信・記録するパッケージです。
 
 コマンドを実行するノードと、実行結果を受信して表示するノードから構成されており、
-ROS 2 の topic 通信の基本的な使い方を学ぶことができます。
+ROS2のtopic 通信の基本的な使い方を学ぶことができます。
 
 ---
 
@@ -46,9 +46,9 @@ STDERR:
 ```
 
 ## 動作環境
-- ROS 2 Humble
+- ROS2Humble
 - Python 3.10
-- Ubuntu 22.04（WSL2 含む）
+- Ubuntu 22.04（WSL2含む）
 - GitHub Actions（ubuntu-latest）でテスト済み
 
 ## 権利関係・ライセンス
