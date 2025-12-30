@@ -1,5 +1,5 @@
 name: test
-on: [push]
+on: push
 
 jobs:
   test:
@@ -8,12 +8,13 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-
-      - name: Sync workspace
-        run: |
-          rsync -av ./ /root/ros2_ws/src/mypkg/
-
       - name: Build and test
         run: |
-          bash ./src/mypkg/test/test.bash /root
+          WORKSPACE=$GITHUB_WORKSPACE/ros2_ws
+          mkdir -p $WORKSPACE/src
+          rsync -av ./ $WORKSPACE/src/mypkg/
+          cd $WORKSPACE
+          colcon build --symlink-install
+          source install/setup.bash
+          bash $WORKSPACE/src/mypkg/test/test.bash $WORKSPACE
 
