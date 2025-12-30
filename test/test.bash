@@ -2,12 +2,18 @@
 # SPDX-FileCopyrightText: 2025 Natsuhi Shimada
 # SPDX-License-Identifier: BSD-3-Clause
 
-dir=$1
-[ "$dir" == "" ] && dir=$GITHUB_WORKSPACE
+set -e
 
-cd $dir/src/mypkg || exit 1
-colcon build --symlink-install || exit 1
-. install/setup.bash
+dir=$1
+[ -z "$dir" ] && dir=$GITHUB_WORKSPACE
+
+cd "$dir/src/mypkg"
+
+colcon build --symlink-install
+
+source install/setup.bash
+
 timeout 10 ros2 launch mypkg talk_listen.launch.py > /tmp/mypkg.log 2>&1
-grep 'Listen: 10' /tmp/mypkg.log || exit 1
+
+grep 'Listen: 10' /tmp/mypkg.log
 
