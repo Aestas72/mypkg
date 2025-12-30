@@ -13,7 +13,5 @@ jobs:
           WORKSPACE=$GITHUB_WORKSPACE/ros2_ws
           mkdir -p $WORKSPACE/src
           rsync -av ./ $WORKSPACE/src/mypkg/
-          cd $WORKSPACE
-          colcon build --symlink-install
           bash $WORKSPACE/src/mypkg/test/test.bash $WORKSPACE
 
