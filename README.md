@@ -54,5 +54,4 @@ STDERR:
 
 ## 謝辞
 本パッケージの作成にあたり，以下の講義資料を参考にしました。
-- [robosys2025（CC-BY-SA 4.0 by Ryuichi Ueda）](https://github.com/ryuichiueda/slides_marp/tree/master/robosys2025)  
-スライドを参考にしましたが、コードおよびREADMEの文章は自分で作成したものです。
+- [robosys2025（CC-BY-SA 4.0 by Ryuichi Ueda）](https://github.com/ryuichiueda/slides_marp/tree/master/robosys2025)
