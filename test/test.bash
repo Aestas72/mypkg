@@ -1,12 +1,19 @@
 #!/bin/bash
+set -e
 
-dir=~
+dir=/root
 [ "$1" != "" ] && dir="$1"
+
+# ROS 2 を必ず source
+source /opt/ros/humble/setup.bash
 
 cd $dir/ros2_ws
 colcon build
-source $dir/.bashrc
+
+# ワークスペースを source
+source install/setup.bash
+
 timeout 10 ros2 launch mypkg talk_listen.launch.py > /tmp/mypkg.log
 
-cat /tmp/mypkg.log |
-grep 'Listen: 10'
+grep 'Listen: 10' /tmp/mypkg.log
+
