@@ -6,21 +6,10 @@
 
 ---
 
-## インストール方法
+## ノード構成
 
-```bash
-# リポジトリをクローン
-$ git clone https://github.com/Aestas72/mypkg.git
-
-# ワークスペースへ配置
-$ mkdir -p ~/ros2_ws/src
-$ mv mypkg ~/ros2_ws/src/
-
-# ビルド
-$ cd ~/ros2_ws
-$ colcon build
-$ source install/setup.bash
-```
+- **talker**: 指定コマンドを定期実行し、結果を `command_result` トピックに送信  
+- **listener**: `command_result` トピックを購読し、実行結果を標準出力に表示
 
 ## 使い方
 ```bash
