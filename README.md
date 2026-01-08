@@ -1,8 +1,7 @@
 # mypkg — コマンド実行ログROS2パッケージ
 ![test](https://github.com/Aestas72/mypkg/actions/workflows/test.yml/badge.svg)
 
-`mypkg` は、ROS2上でシェルコマンドを定期的に実行し、その実行結果を
-トピック通信で配信・記録するパッケージです。
+`mypkg` は、ROS2上でシェルコマンドを定期的に実行し、その実行結果をトピック通信で配信・記録するパッケージです。
 
 ---
 
