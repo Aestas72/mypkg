@@ -41,7 +41,7 @@
 
 ## 使い方
 ```bash
-#ノードの起動(launch ファイル使用)
+#ノードの起動(launchファイル使用)
 $ ros2 launch mypkg talk_listen.launch.py
 ```
 
