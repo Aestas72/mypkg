@@ -32,9 +32,8 @@ STDERR:
 ```
 
 ## 動作環境
-- ROS2Humble
-- Python 3.10
-- Ubuntu 22.04（WSL2含む）
+- ROS2 Jazzy
+- Ubuntu 24.04
 - GitHub Actions（ubuntu-latest）でテスト済み
 
 ## 権利関係・ライセンス
