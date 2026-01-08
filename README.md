@@ -33,20 +33,19 @@
 
 ## トピック
 
-- `/command_result` (`std_msgs/msg/String`)  
-  実行したコマンドの標準出力・標準エラー・終了コードを
-  文字列として送信します。
+`/command_result`(`std_msgs/msg/String`)  
+実行したコマンドの標準出力・標準エラー・終了コードを
+文字列として送信します。
 
 ---
 
 ## 使い方
 ```bash
-#ノードの起動（launch ファイル使用）
+#ノードの起動(launch ファイル使用)
 $ ros2 launch mypkg talk_listen.launch.py
 ```
 
 ## 実行例
-以下はdf -hを実行した場合の出力例です。
 ```bash
 ========================================
 Command: df -h
@@ -63,7 +62,7 @@ STDERR:
 ## 動作環境
 - ROS2 Jazzy
 - Ubuntu 24.04
-- GitHub Actions（ubuntu-latest）でテスト済み
+- GitHub Actions(ubuntu-latest)でテスト済み
 
 ## 権利関係・ライセンス
 - このソフトウェアパッケージは，3条項BSDライセンスの下，再頒布および使用が許可されています。
